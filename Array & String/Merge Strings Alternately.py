@@ -63,4 +63,4 @@ class Solution(object):
                 arr+=word2[i]
             return arr
         
- 
+ """Improvements: Use a while statement to fit all 3 cases in same loop instead of solving each individually
