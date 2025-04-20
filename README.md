@@ -2,7 +2,7 @@
 My solutions to the LeetCode 75 series
 
 
-Welcome to my LeetCode practice repo! This is where I’m solving and documenting coding problems as part of my interview prep journey. 💻
+Welcome to my LeetCode practice repo! This is where I’m solving and documenting coding problems as part of my learning journey. 💻
 
 ## 🛠️ Goals
 - ✅ Strengthen problem-solving skills
