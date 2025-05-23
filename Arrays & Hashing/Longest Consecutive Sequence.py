@@ -6,7 +6,7 @@
 #Example 1: Input: nums = [2,20,4,10,3,4,5]
 #Output: 4
 
-#Solution:
+#Solution: O(n^2)
 class Solution:
     def longestConsecutive(self, nums: List[int]) -> int:
         if not nums:
@@ -20,7 +20,7 @@ class Solution:
                 current_streak += 1
                 longest = max(longest, current_streak)
             else:
-                current_streak = 1
+                current_streak = 1  #streak reset
         return longest
 
 
