@@ -9,12 +9,21 @@
 
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        a=sorted(s)
-        b=sorted(t)
-        if a==b:
-            return True
-        else:
+        if len(s)!=len(t):
             return False
+        else:
+            CountS, CountT={}, {}
 
-#Tip: Can be made more efficient by checking if len(s)==len(t) at the beginning itself, 
-#and returning False if not true.
+            for i in range(len(s)):
+                CountS[s[i]]=1+CountS.get(s[i],0)
+                CountT[t[i]]=1+CountT.get(t[i],0)
+            if CountS==CountT:
+                return True
+            else:
+                return False    
+
+#A hash map (also called a dictionary in Python) is a data structure that stores key-value pairs 
+#and allows for fast access, insertion, and updates.
+#It counts character frequencies for both strings into two separate hash maps.
+#If these two frequency maps are identical, the strings are anagrams.
+#Time C: O(m+n) & Space C: O(1)
