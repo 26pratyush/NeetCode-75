@@ -10,13 +10,11 @@
 
 class Solution:
     def hasDuplicate(self, nums: List[int]) -> bool:
-         for i in range(len(nums)):
-            dup=0
-            for j in range(len(nums)):
-                if nums[i]==nums[j]:
-                    dup+=1
-            if dup>1:
-                return True
-         return False
+        
+        if len(set(nums))<len(nums):
+            return True
+        else:
+            return False
 
-#Tip: Can reduce time complexity by sorting first, then comparing contiguous elements.
+#Converting the list to a set removes duplicates efficiently. 
+#If the set's length is less than the original list's length, duplicates existed.
