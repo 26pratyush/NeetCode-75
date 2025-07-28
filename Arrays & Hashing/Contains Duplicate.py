@@ -16,5 +16,6 @@ class Solution:
         else:
             return False
 
+#A set in Python is a data structure that does not allow duplicate values and provides O(1) time complexity
 #Converting the list to a set removes duplicates efficiently. 
 #If the set's length is less than the original list's length, duplicates existed.
