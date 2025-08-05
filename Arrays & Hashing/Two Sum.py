@@ -9,12 +9,18 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         
-        seen={}
-        for i, num in enumerate(nums):
-            inverse=target-num
+        seen = {}
+
+        # Go through each number in the list along with its index
+        for i in range(len(nums)):
+            num = nums[i]  # Current number
+            inverse = target - num  # The number we need to find a pair
+
+            # Check if the matching number is already in the dictionary
             if inverse in seen:
-                return [seen[inverse],i]
-            seen[num]=i
+                return [seen[inverse], i]    # If it is, we found the pair that adds up to the target
+
+            seen[num] = i     # Otherwise, store this number and its index in the dictionary
             
 '''This solution uses a hash map (seen dictionary) to find two numbers that sum to the target. 
 It iterates through the array, for each number, calculates the complement needed to reach the target. 
