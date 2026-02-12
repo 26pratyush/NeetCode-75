@@ -16,6 +16,6 @@ class Solution:
             anagram_map[key].append(word)
         return list(anagram_map.values())
 
-This solution groups anagrams by counting each word’s character frequencies using Counter.
-It converts the frequency dictionary into a sorted tuple (key) so it can be used as a dictionary key (as tuple is immutable).
-Words with the same character counts share the same key and are grouped together in anagram_map.
+# This solution groups anagrams by counting each word’s character frequencies using Counter.
+# It converts the frequency dictionary into a sorted tuple (key) so it can be used as a dictionary key (as tuple is immutable).
+# Words with the same character counts share the same key and are grouped together in anagram_map.
