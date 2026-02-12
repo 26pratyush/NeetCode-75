@@ -5,7 +5,7 @@
 #Example 1: nums = [3,4,5,6], target = 7
 #Output: [0,1] Explanation: nums[0] + nums[1] == 7, so we return [0, 1].
 
-#Solution: Crude approach when list is already sorted:
+#Solution: Crude approach using 2 pointers, when list is already sorted:
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         left=0
@@ -40,6 +40,3 @@ It iterates through the array, for each number, calculates the complement needed
 If the complement is already in seen (meaning it was encountered earlier), 
 it returns the stored index of the complement and the current number's index. 
 Otherwise, it adds the current number and its index to seen for future checks.'''
-
-#Tip: You can also use 2 pointers but worse time C. Start with two pointers at the beginning and end of the sorted list. Check if A[i][0] + A[j][0] == target.
-#If sum is too small, move i forward. If sum is too big, move j backward. If sum matches, return the original indices in sorted order.
