@@ -5,6 +5,19 @@
 #Example 1: nums = [3,4,5,6], target = 7
 #Output: [0,1] Explanation: nums[0] + nums[1] == 7, so we return [0, 1].
 
+#Solution: Crude approach when list is already sorted:
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        left=0
+        right=len(nums)-1
+        while left<right:
+            if nums[left]+nums[right]==target:
+                return left,right
+            elif nums[left]+nums[right]<target:
+                left+=1
+            elif nums[left]+nums[right]>target:
+                right-=1
+
 #Solution:
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
