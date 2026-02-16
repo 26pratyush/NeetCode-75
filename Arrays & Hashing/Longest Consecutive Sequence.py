@@ -9,19 +9,25 @@
 #Solution: O(n^2)
 class Solution:
     def longestConsecutive(self, nums: List[int]) -> int:
-        if not nums:
+        if len(nums) == 0:
             return 0
-        nums = sorted(set(nums))  # remove duplicates and sort
+
+        nums = sorted(nums)
+        print(nums)
+
         longest = 1
-        current_streak = 1
+        current_seq = 1
 
         for i in range(1, len(nums)):
-            if nums[i] == nums[i - 1] + 1:
-                current_streak += 1
-                longest = max(longest, current_streak)
+            if nums[i] == nums[i - 1]:
+                continue                           # skip duplicates
+            elif nums[i] == nums[i - 1] + 1:
+                current_seq += 1
             else:
-                current_streak = 1  #streak reset
-        return longest
+                longest = max(longest, current_seq)
+                current_seq = 1
+
+        return max(longest, current_seq)
 
 
 #Tip: O(n) Solution
