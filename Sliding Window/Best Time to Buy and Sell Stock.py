@@ -15,13 +15,13 @@ for i in range(len(prices)):
 return profit
 
 #Sliding Window: O(n)
-minprice=float('inf')
-maxprofit=0
+left = 0          
+max_profit = 0
 
-for price in prices:
-    if price<minprice:
-        minprice=price
-    if price-minprice>maxprofit:
-        maxprofit=price-minprice
-
-return maxprofit
+for right in range(1, len(prices)):
+    if prices[right] > prices[left]:
+        profit = prices[right] - prices[left]
+        max_profit = max(max_profit, profit)
+    else:
+        left = right
+return max_profit
