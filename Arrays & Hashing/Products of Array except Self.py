@@ -25,7 +25,7 @@ class Solution:
         ans = []
         for num in nums:
             if zero_count == 0:
-                ans.append(int(total_product / num))
+                ans.append(total_product // num)
             elif num == 0:
                 ans.append(total_product)  # Only 1 zero in input, so this is the position of the zero
             else:
