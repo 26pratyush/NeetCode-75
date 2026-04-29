@@ -5,15 +5,6 @@
 #Example 1: Input: prices = [10,1,5,6,7,1]
 #Output: 6: Explanation: Buy prices[1] and sell prices[4], profit = 7 - 1 = 6.
 
-#Brute Force: O(n²)
-profit=0
-for i in range(len(prices)):
-    price=prices[i]
-    for j in range(0,i):        #not i-1
-        if prices[j]<prices[i] and prices[i]-prices[j]>profit:  #to check profit before rewriting
-            profit=prices[i]-prices[j]
-return profit
-
 #Sliding Window: O(n)
 left = 0          
 max_profit = 0
