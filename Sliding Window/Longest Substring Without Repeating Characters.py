@@ -5,14 +5,17 @@
 # Output: 3
 # Explanation: The string "xyz" is the longest without duplicate characters.
 
-def lengthOfLongestSubstring(self, s: str) -> int:
-        n = len(s)
-        ans = 0
-
-        for left in range(n):
-            for right in range(left, n):
-                substring = s[left:right+1]
-
-                if len(set(substring)) == len(substring):
-                    ans = max(ans, right - left + 1)
-        return ans
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        maxl=0
+            
+        for i in range(len(s)):
+            chars=set()
+            for j in range(i, len(s)):
+                if s[j] in chars:
+                    break
+                        
+                else:
+                    chars.add(s[j])
+                    maxl=max(maxl,len(chars))
+        return maxl
