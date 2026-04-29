@@ -7,13 +7,17 @@
 
 #Solution:
 class Solution:
-    def isPalindrome(self, x: str) -> bool:
-        s = x.lower()
-        s = ''.join(c for c in s if c.isalnum())
-        a, b = 0, len(s) - 1
-        while a < b:
-            if s[a] != s[b]:
+    def isPalindrome(self, s: str) -> bool:
+        import re
+
+        s=s.lower()
+        s=re.sub('[^a-zA-Z0-9]',"",s)
+        print(s)
+
+        left,right=0,len(s)-1
+        while left<right:
+            if s[left]!=s[right]:
                 return False
-            a += 1
-            b -= 1
+            left+=1
+            right-=1
         return True
